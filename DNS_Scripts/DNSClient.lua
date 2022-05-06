@@ -1,3 +1,8 @@
+--[[
+By: Bubbafett5611
+Version: 0.0.1
+Date: 2022/05/05
+]]--
 ---sendMsg
 ---Sends a formatted message to the message server for translation and forwarding to the remote machine.
 ---@param fDNSServer string @The UUID of the ARP server.
