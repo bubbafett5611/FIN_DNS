@@ -4,54 +4,54 @@ Version: 0.0.1
 Date: 2022/05/05
 ]]--
 ---runDNSServer
----@param fDNSData number @Client to server communication port.
----@param fDNSControl number @Server to client communication port.
----@param fDNSBroadcastIn number @Server to server inbound port.
----@param fDNSBroadcastOut number @Server to server outbound port.
----@param fMsgPort number @Port for handling messages.
-function runDNSServer(fDNSData, fDNSControl, fDNSBroadcastIn, fDNSBroadcastOut, fMsgPort)
-    local fNIC = computer.getPCIDevices(findClass("NetworkCard"))[1]
+---@param DataPort number @Client to server communication port.
+---@param ControlPort number @Server to client communication port.
+---@param BroadcastInPort number @Server to server inbound port.
+---@param BroadcastOutPort number @Server to server outbound port.
+---@param MessagePort number @Port for handling messages.
+function runDNSServer(DataPort, ControlPort, BroadcastInPort, BroadcastOutPort, MessagePort)
+    local NIC = computer.getPCIDevices(findClass("NetworkCard"))[1]
     computer.beep(1)
     print("DNS Server Started!")
-    fNIC:closeALL()
-    fNIC:open(fDNSData)
-    fNIC:open(fMsgPort)
-    fNIC:open(fDNSBroadcastIn)
-    fNickname = tostring(fNIC.nick)
-    fNIC:broadcast(fDNSControl, "Start: " .. fNickname)
-    print("Broadcast sent on: " .. fDNSControl)
+    NIC:closeALL()
+    NIC:open(DataPort)
+    NIC:open(MessagePort)
+    NIC:open(BroadcastInPort)
+    local Nickname = tostring(NIC.nick)
+    NIC:broadcast(ControlPort, "Start: " .. Nickname)
+    print("Broadcast sent on: " .. ControlPort)
 
-    event.listen(fNIC)
-    fRemoteNICs = {}
+    event.listen(NIC)
+    RemoteNICs = {}
     while true do
-        ev, module, sender, pt, fMessage = event.pull()
-        local fRemoteNIC = sender
-        if fMessage == nil then
+        ev, module, sender, pt, MessageIn = event.pull()
+        local RemoteNIC = sender
+        if MessageIn == nil then
             break
-        elseif string.match(fMessage, "Dest:") then
-            _, _, fRemoteName, fMsg, fSendName = string.find(fMessage, "Dest:%s(.*),%sMsg:%s(.*),%sFrom:%s(.*)")
-            local fLoop = true
-            while fLoop == true do
-                for Key, Value in pairs(fRemoteNICs) do
-                    if Key == fRemoteName then
-                        fRecUUID = Value
+        elseif string.match(MessageIn, "Dest:") then
+            _, _, RemoteName, Message, SendName = string.find(MessageIn, "Dest:%s(.*),%sMsg:%s(.*),%sFrom:%s(.*)")
+            local Loop = true
+            while Loop == true do
+                for Key, Value in pairs(RemoteNICs) do
+                    if Key == RemoteName then
+                        RecUUID = Value
                     end
                 end
-                if fRecUUID == nil then
-                    fNIC:Broadcast(fDNSBroadcastOut, fMessage)
-                    print("Broadcast: " .. fMsg .. " To: " .. fRemoteName .. " From: " .. fSendName)
-                    fLoop = false
+                if RecUUID == nil then
+                    NIC:Broadcast(BroadcastOutPort, MessageIn)
+                    print("Broadcast: " .. Message .. " To: " .. RemoteName .. " From: " .. SendName)
+                    Loop = false
                 else
-                    fNIC:send(fRecUUID, fMsgPort, fMsg .. ",From: " .. fSendName)
-                    print("Sending: " .. fMsg .. " To: " .. fRemoteName .. " (" .. fRecUUID .. ") From: " .. fSendName)
-                    fLoop = false
+                    NIC:send(RecUUID, MessagePort, Message .. ",From: " .. SendName)
+                    print("Sending: " .. Message .. " To: " .. RemoteName .. " (" .. RecUUID .. ") From: " .. SendName)
+                    Loop = false
                 end
             end
         else
-            local fRemoteName = fMessage
-            fRemoteNICs[fRemoteName] = fRemoteNIC
-            fNIC:send(fRemoteNIC, fDNSControl, "ACK")
-            print("Added: " .. fRemoteName .. " = " .. fRemoteNICs[fRemoteName])
+            local RemoteName = MessageIn
+            RemoteNICs[RemoteName] = RemoteNIC
+            NIC:send(RemoteNIC, ControlPort, "ACK")
+            print("Added: " .. RemoteName .. " = " .. RemoteNICs[RemoteName])
         end
     end
 end
