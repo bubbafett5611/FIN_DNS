@@ -1,12 +1,3 @@
-local vNIC = computer.getPCIDevices(findClass("NetworkCard"))[1]
-local vDNSData = 10
-local vDNSControl = 20
-local vMsgPort = 30
-local vLights = component.proxy(component.findComponent("LightControls"))[1]
-
-vNIC:CloseAll()
-event.clear()
-
 ---sendMsg
 ---Sends a formatted message to the message server for translation and forwarding to the remote machine.
 ---@param fDNSServer string @The UUID of the ARP server.
@@ -73,16 +64,3 @@ function receiveMsg(fDNSComplete, fMsgPort)
         end
     end
 end
-
-:: RegisterDNS ::
-local vDNSServer, vDNSComplete = registerDNS(vDNSControl, vDNSData)
---sendMsg(vDNSServer, vMsgPort, "NET1COMP1", "Test")
-:: ReceiveMessage ::
-local vFrom, vMsg, vDNSReboot = receiveMsg(vDNSComplete, vMsgPort)
-if vDNSReboot == true then
-    goto RegisterDNS
-end
---if vMsg == "Light: On" then vLights.isLightEnabled = true end
---if vMsg == "Light: Off" then vLights.isLightEnabled = false end
-print(vFrom .. " Sent: " .. vMsg)
-goto ReceiveMessage
