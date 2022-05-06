@@ -23,7 +23,7 @@ end
 function registerClient(ControlPort, DataPort)
     local NIC = computer.getPCIDevices(findClass("NetworkCard"))[1]
     NIC:open(ControlPort)
-    local Nickname = tostring(fNIC.nick)
+    local Nickname = tostring(NIC.nick)
     NIC:broadcast(DataPort, Nickname)
     event.listen(NIC)
     local DNSComplete = false
