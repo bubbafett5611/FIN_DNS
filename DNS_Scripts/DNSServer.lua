@@ -1,13 +1,14 @@
-local vDNSData = 10
-local vDNSControl = 20
-local vMsgPort = 30
-local vDNSBroadcastIn = 40
-local vDNSBroadcastOut = 41
-
+--[[
+By: Bubbafett5611
+Version: 0.0.1
+Date: 2022/05/05
+]]--
 ---runDNSServer
----@param fDNSData number @The client to server communication port.
----@param fDNSControl number @The server to client communication port.
----@param fMsgPort number @The client to client communication port.
+---@param fDNSData number @Client to server communication port.
+---@param fDNSControl number @Server to client communication port.
+---@param fDNSBroadcastIn number @Server to server inbound port.
+---@param fDNSBroadcastOut number @Server to server outbound port.
+---@param fMsgPort number @Port for handling messages.
 function runDNSServer(fDNSData, fDNSControl, fDNSBroadcastIn, fDNSBroadcastOut, fMsgPort)
     local fNIC = computer.getPCIDevices(findClass("NetworkCard"))[1]
     computer.beep(1)
@@ -54,5 +55,3 @@ function runDNSServer(fDNSData, fDNSControl, fDNSBroadcastIn, fDNSBroadcastOut, 
         end
     end
 end
-
-runDNSServer(vDNSData, vDNSControl, vDNSBroadcastIn, vDNSBroadcastOut, vMsgPort)
