@@ -1,29 +1,32 @@
 # FicsIt-Networks DNS
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![GNU License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+![GitHub contributors](https://img.shields.io/github/contributors/bubbafett5611/FIN_DNS)
+![GitHub forks](https://img.shields.io/github/forks/bubbafett5611/FIN_DNS)
+![GitHub issues](https://img.shields.io/github/issues/Bubbafett5611/FIN_DNS)
+![GitHub](https://img.shields.io/github/license/Bubbafett5611/FIN_DNS)
 
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="## About FicsIt-Networks DNS">About FicsIt-Networks DNS</a>
+      <ul>
+        <li><a href="### Introduction">Introduction</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+  </ol>
+</details>
 
 ## About FicsIt-Networks DNS
 ### Introduction
 FicsIt-Networks DNS is a group of functions to provide DNS like services to the computers in the mod FicsIt-Networks.
 
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
