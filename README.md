@@ -200,5 +200,14 @@ and one for receiving messages.
 >
 >***This function currently prints all returns to console.***
 
+> receiveMsg(DNSComplete, Port)
+> - **Param:** ``DNSComplete`` **Type:** ``boolean`` Passed from registerClient().
+> - **Param:** ``Port`` **Type:** ``number`` Port to listen to messages on.
+> ---
+> - **Return:** ``From`` **Type:** ``string`` The nickname of the computer that sent the message.
+> - **Return:** ``Message`` **Type:** ``string`` The actual message itself.
+> - **Return:** ``DNSReboot`` **Type:** ``boolean`` Used in if statement to restart the registration process if the server reboots.
+> See examples for more details.
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
