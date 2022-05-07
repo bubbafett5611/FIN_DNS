@@ -14,8 +14,8 @@
     * [Installation](#installation)
         + [DNS Server Installation](#dns-server-installation)
         + [DNS Client Installation](#dns-client-installation)
-            - [Downloading and installing the file:](#downloading-and-installing-the-file-)
-            - [Launch and Register Clients:](#launch-and-register-clients-)
+            - [Downloading and installing the file:](#downloading-and-installing-the-file)
+            - [Launch and Register Clients:](#launch-and-register-clients)
     * [Functions](#functions)
         + [DNS Server Functions](#dns-server-functions)
         + [DNS Client Functions](#dns-client-functions)
@@ -116,7 +116,7 @@ runDNSServer(DataPort, ControlPort,BroadcastInPort,BroadcastOutPort, MsgPort)
 DNS server installation is as simple as downloading and installing the DNSServer.lua script
 and installing it to a temporary file system, then running the launch function.
 
-#### Downloading and installing the file:
+#### Downloading and installing the file
 Installing the files this way allows you to receive updates to your files as computers reboot.
 ```lua
 local card = computer.getPCIDevices(findClass("FINInternetCard"))[1]
@@ -130,7 +130,7 @@ file:write(DNSClient)
 file:close()
 ```
 
-#### Launch and Register Clients: 
+#### Launch and Register Clients
 This example shows how to register clients with the server, send a message, then waits on messages to print.
 ```lua
 --Port numbers can be changed to suite your needs, however I have not tested reusing ports in the same network.
