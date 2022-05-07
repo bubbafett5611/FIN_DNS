@@ -13,8 +13,10 @@
     * [Prerequisites](#prerequisites)
     * [Installation](#installation)
         + [DNS Server Installation](#dns-server-installation)
+            - [Downloading and Installing the Server Files](#downloading-and-installing-the-server-files)
+            - [Launch and Register Clients](#launch-and-register-clients)
         + [DNS Client Installation](#dns-client-installation)
-            - [Downloading and installing the file](#downloading-and-installing-the-file)
+            - [Downloading and Installing the Client Files](#Downloading-and-Installing-the-Client-Files)
             - [Launch and Register Clients](#launch-and-register-clients)
     * [Functions](#functions)
         + [DNS Server Functions](#dns-server-functions)
@@ -79,7 +81,7 @@ As of now, the clients and servers have two different installation files however
 DNS server installation is as simple as downloading and installing the DNSServer.lua script
 and installing it to a temporary file system, then running the launch function.
 
-**Downloading and installing the file:**
+#### Downloading and Installing the Server Files
 Installing the files this way allows you to receive updates to your files as computers reboot.
 ```lua
 local card = computer.getPCIDevices(findClass("FINInternetCard"))[1]
@@ -93,7 +95,7 @@ file:write(DNSServer)
 file:close()
 ```
 
-**Launch the DNS Server:**
+#### Launch the DNS Server
 As of now, DNS servers only have a single function that handles all of their task. I plan on splitting this
 to allow for more control over functionality.
 ```lua
@@ -116,7 +118,7 @@ runDNSServer(DataPort, ControlPort,BroadcastInPort,BroadcastOutPort, MsgPort)
 DNS server installation is as simple as downloading and installing the DNSServer.lua script
 and installing it to a temporary file system, then running the launch function.
 
-#### Downloading and installing the file
+#### Downloading and Installing the Client Files
 Installing the files this way allows you to receive updates to your files as computers reboot.
 ```lua
 local card = computer.getPCIDevices(findClass("FINInternetCard"))[1]
