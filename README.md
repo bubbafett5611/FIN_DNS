@@ -200,7 +200,7 @@ and one for receiving messages.
 >
 >***This function currently prints all returns to console.***
 
-> receiveMsg(DNSComplete, Port)
+> **receiveMsg(``DNSComplete``, ``Port``)**
 > - **Param:** ``DNSComplete`` **Type:** ``boolean`` Passed from registerClient().
 > - **Param:** ``Port`` **Type:** ``number`` Port to listen to messages on.
 > ---
