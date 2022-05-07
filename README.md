@@ -4,37 +4,21 @@
 ![GitHub issues](https://img.shields.io/github/issues/Bubbafett5611/FIN_DNS)
 ![GitHub](https://img.shields.io/github/license/Bubbafett5611/FIN_DNS)
 
-<!-- TABLE OF CONTENTS -->
-
 ---
 
+### Table of Content
 
-
-
-
-
-<details>
-    <summary>Table of Contents</summary>
-    <ol>
-        <li>
-            <a href="# About FicsIt-Networks DNS">About FicsIt-Networks DNS</a>
-            <ul>
-                <li><a href="## Introduction">Introduction</a></li>
-                <li><a href="## Prerequisites">Prerequisites</a></li>
-                <li><a href="## Installation">Installation</a></li>
-                <ul>
-                    <li><a href="### DNS Server Installation">DNS Server Installation</a></li>
-                    <li><a href="### DNS Client Installation">DNS Client Installation</a></li>
-                </ul>
-                <li><a href="## Functions">Functions</a></li>
-                <ul>
-                    <li><a href="### DNS Server Functions">DNS Server Functions</a></li>
-                    <li><a href="### DNS Client Functions">DNS Client Functions</a></li>
-                </ul>
-            </ul>
-        </li>
-    </ol>
-</details>
+- [About FicsIt-Networks DNS](#about-ficsit-networks-dns)
+    * [Introduction](#introduction)
+    * [Prerequisites](#prerequisites)
+    * [Installation](#installation)
+        + [DNS Server Installation](#dns-server-installation)
+        + [DNS Client Installation](#dns-client-installation)
+            - [Downloading and installing the file:](#downloading-and-installing-the-file-)
+            - [Launch and Register Clients:](#launch-and-register-clients-)
+    * [Functions](#functions)
+        + [DNS Server Functions](#dns-server-functions)
+        + [DNS Client Functions](#dns-client-functions)
 
 ---
 
